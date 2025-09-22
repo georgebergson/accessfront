@@ -1,0 +1,25 @@
+
+<div class="create-user-container">
+  <h2>Criar Novo Usuário</h2>
+  <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Usuário</label>
+      <input type="text" id="username" formControlName="username">
+    </div>
+    <div class="form-group">
+      <label for="password">Senha</label>
+      <input type="password" id="password" formControlName="password">
+    </div>
+    <div class="form-group">
+      <label for="profile">Perfil</label>
+      <select id="profile" formControlName="profile">
+        <option value="user">Usuário</option>
+        <option value="admin">Administrador</option>
+      </select>
+    </div>
+    <button type="submit" [disabled]="createUserForm.invalid">Criar</button>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>

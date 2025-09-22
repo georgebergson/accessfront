@@ -1,0 +1,25 @@
+
+<div class="edit-user-container">
+  <h2>Editar Usuário</h2>
+  <form [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Usuário</label>
+      <input type="text" id="username" formControlName="username">
+    </div>
+    <div class="form-group">
+      <label for="password">Nova Senha (deixe em branco para não alterar)</label>
+      <input type="password" id="password" formControlName="password">
+    </div>
+    <div class="form-group">
+      <label for="role">Perfil</label> <!-- Changed from 'profile' to 'role' -->
+      <select id="role" formControlName="role"> <!-- Changed from 'profile' to 'role' -->
+        <option value="ROLE_USER">Usuário</option> <!-- Updated value -->
+        <option value="ROLE_ADMIN">Administrador</option> <!-- Updated value -->
+      </select>
+    </div>
+    <button type="submit" [disabled]="editUserForm.invalid">Salvar</button>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>

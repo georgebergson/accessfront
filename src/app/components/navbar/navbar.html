@@ -1,0 +1,20 @@
+
+<nav class="navbar" *ngIf="isLoggedIn">
+  <ul class="nav-list">
+    <li class="nav-item">
+      <a routerLink="/dashboard" class="nav-link">Dashboard</a>
+    </li>
+    <li class="nav-item" *ngIf="loggedInUserId">
+      <a [routerLink]="['/edit-user', loggedInUserId]" class="nav-link">Editar Meu Perfil</a>
+    </li>
+    <li class="nav-item" *ngIf="isAdminUser">
+      <a routerLink="/create-user" class="nav-link">Criar Usuário</a>
+    </li>
+    <li class="nav-item" *ngIf="isAdminUser">
+      <a routerLink="/list-users" class="nav-link">Listar Usuários</a>
+    </li>
+    <li class="nav-item">
+      <button (click)="logout()" class="nav-link logout-button">Sair</button>
+    </li>
+  </ul>
+</nav>
