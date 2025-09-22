@@ -38,7 +38,7 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone <URL_DO_SEU_REPOSITORIO>
+    git clone https://github.com/georgebergson/accessfront
     cd accessFront
     ```
 2.  **Instale as dependências:**
